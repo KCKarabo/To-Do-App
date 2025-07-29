@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <script>
+  if (!localStorage.getItem("username")) {
+    window.location.href = "signin.html";
+  }
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do App 🌸</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌼 To-Do List 🧁</h1>
+
+    <div class="input-group">
+      <input type="text" id="task-input" placeholder="e.g., 🧋 Buy bubble tea" />
+      <input type="date" id="due-date" />
+      <input type="time" id="due-time" />
+      <button onclick="addTask()">➕ Add</button>
+    </div>
+
+    <div class="controls">
+  <select id="filter" onchange="renderTasks()">
+    <option value="all">All</option>
+    <option value="active">Active</option>
+    <option value="completed">Completed</option>
+  </select>
+
+  <select id="sort" onchange="renderTasks()">
+    <option value="default">Default</option>
+    <option value="az">A-Z</option>
+    <option value="za">Z-A</option>
+  </select>
+
+  <!-- 👇 Buttons appear here -->
+  <div id="button-group" style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;"></div>
+</div>
+
+
+    <ul id="task-list"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

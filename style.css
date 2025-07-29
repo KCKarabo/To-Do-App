@@ -1,0 +1,176 @@
+body {
+  background: #fff0f5;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.3);
+}
+
+h1 {
+  text-align: center;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="date"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid #ffc0cb;
+  background-color: #fffafc;
+}
+
+.input-group button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #ffb6c1;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.input-group button:hover {
+  background-color: #ff69b4;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* previously 0.5rem or larger */
+  flex-wrap: wrap;
+}
+
+
+.controls select {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 2px solid #ffb6c1;
+  background-color: #fff0f5;
+  color: #333;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.controls select:hover {
+  border-color: #ff69b4;
+  background-color: #ffe4ec;
+}
+
+
+
+ul#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff8fb;
+  border: 2px solid #ffe4ec;
+  padding: 10px 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+li .due-date {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.4s ease;
+}
+
+/* Ensure filter and sort are side-by-side with the theme toggle on large screens */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+/* Make filter, sort, and toggle responsive on smaller screens */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls select,
+  .controls button {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .theme-toggle {
+    margin-left: 0 !important;
+  }
+}
+
+.emoji-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px;
+  position: absolute;
+  background: #fff0f5;
+  border: 2px solid #ffb6c1;
+  border-radius: 12px;
+  max-width: 300px;
+  z-index: 1000;
+  top: 100px; /* adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.emoji-btn {
+  font-size: 20px;
+  padding: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.emoji-btn:hover {
+  transform: scale(1.3);
+}
